@@ -1,4 +1,9 @@
 class stringsConstnat extends String {
+    live = false;
+    url_dev = "http://localhost:5004";
+    url_test = "http://localhost:5005";
+    url_live = "http://localhost:5006";
+
     applicationJSON = { "Content-Type": "application/json" };
     fileJSON = { "Content-Type": "text/csv" };
     multipartForm = {};
