@@ -20,7 +20,6 @@ const App = () => {
           <Route path={urls.loginViewPath} element={<Home />} />
           <Route path={urls.registerViewPath} element={<Home />} />
           <Route path={urls.forgotPasswordViewPath} element={<Home />} />
-          <Route path={urls.changePasswordViewPath} element={<Home />} />
         </Routes>
       </Router>
     </div>

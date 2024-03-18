@@ -5,7 +5,6 @@ import urls from "../../global/constants/UrlConstants";
 
 const Home = () => {
   const location = useLocation();
-  const currentPath = location.pathname.split("/")[1].toLowerCase();
 
   const Login = () => {
     return <div>Login Component</div>;
@@ -24,6 +23,10 @@ const Home = () => {
   };
 
   const getComponentBasedOnURL = () => {
+    const currentPath = window.location.pathname;
+
+    console.log("currentPath", currentPath);
+
     switch (currentPath) {
       case strings.LOGIN: {
         return <Login />;
@@ -43,12 +46,12 @@ const Home = () => {
     }
   };
 
-  const isAuthenticated = true; // Assuming it's false for this example
+  //   const isAuthenticated = true; // Assuming it's false for this example
 
-  if (!isAuthenticated) {
-    // history.push(urls.landingViewPath);
-    return null;
-  }
+  //   if (!isAuthenticated) {
+  //     // history.push(urls.landingViewPath);
+  //     return null;
+  //   }
 
   return getComponentBasedOnURL();
 };
