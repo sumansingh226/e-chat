@@ -1,9 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-
-// Dummy components for routes
-const LandingPage = () => <div>Landing Page</div>;
-const Register = () => <div>Register Page</div>;
+import Home from "./screens/HomePage/Home";
 
 // Define your URLs
 const urls = {
@@ -19,11 +16,11 @@ const App = () => {
     <div>
       <Router>
         <Routes>
-          <Route path={urls.landingViewPath} element={<LandingPage />} />
-          <Route path={urls.loginViewPath} element={<LandingPage />} />
-          <Route path={urls.registerViewPath} element={<Register />} />
-          <Route path={urls.forgotPasswordViewPath} element={<LandingPage />} />
-          <Route path={urls.changePasswordViewPath} element={<LandingPage />} />
+          <Route path={urls.landingViewPath} element={<Home />} />
+          <Route path={urls.loginViewPath} element={<Home />} />
+          <Route path={urls.registerViewPath} element={<Home />} />
+          <Route path={urls.forgotPasswordViewPath} element={<Home />} />
+          <Route path={urls.changePasswordViewPath} element={<Home />} />
         </Routes>
       </Router>
     </div>

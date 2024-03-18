@@ -4,6 +4,11 @@ class stringsConstnat extends String {
     url_test = "http://localhost:5005";
     url_live = "http://localhost:5006";
 
+
+    LOGIN = "login";
+    REGISTER = "register";
+    FORGOTPASSWORD = "forgot-password";
+    CHANGE_PASSWORD = "changepwd";
     applicationJSON = { "Content-Type": "application/json" };
     fileJSON = { "Content-Type": "text/csv" };
     multipartForm = {};
