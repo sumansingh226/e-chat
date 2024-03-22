@@ -1,0 +1,17 @@
+.formContainer {
+    width: 300px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .formContainer h4 {
+    margin-bottom: 20px;
+  }
+  
+  .formContainer .error {
+    color: red;
+    margin-bottom: 10px;
+  }
+  
