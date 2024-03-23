@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: any) => ({
 }));
 
 const ResetPassword: React.FC = () => {
-  const classes = useStyles();
+  const classes: any = {};
   const [email, setEmail] = useState<string>("");
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
