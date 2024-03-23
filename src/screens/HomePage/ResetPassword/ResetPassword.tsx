@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, FormEvent } from "react";
 import {
   Container,
   Typography,
@@ -7,9 +7,9 @@ import {
   makeStyles,
 } from "@mui/material";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: any) => ({
   container: {
-    marginTop: theme.spacing(4),
+    // marginTop: theme.spacing(4),
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
@@ -27,11 +27,11 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const ResetPassword = () => {
+const ResetPassword: React.FC = () => {
   const classes = useStyles();
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState<string>("");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Add your password reset logic here
     console.log("Reset password for email:", email);
