@@ -3,6 +3,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./screens/HomePage/Home";
 import { createTheme } from "@mui/material/styles";
+import urls from "./global/constants/UrlConstants";
 
 const theme = createTheme({
   typography: {
@@ -21,7 +22,7 @@ const theme = createTheme({
 
 const App = () => {
   return (
-    <ThemeProvider theme={{}}>
+    <ThemeProvider theme={theme}>
       <Router>
         <Routes>
           <Route path={urls.landingViewPath} element={<Home />} />

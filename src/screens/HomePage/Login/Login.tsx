@@ -1,20 +1,42 @@
 import { Box, Button, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
+import loginCss from "./loginCss";
+interface FormState {
+  email: {
+    value: string;
+    error: string;
+  };
+  password: {
+    value: string;
+    error: string;
+  };
+}
 
 const Login: React.FC = () => {
-  const [email, setEmail] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [error, setError] = useState<string>("");
+  const classes = loginCss;
+  const initialState: FormState = {
+    email: {
+      value: "",
+      error: "",
+    },
+    password: {
+      value: "",
+      error: "",
+    },
+  };
 
+  const [loginForm, setLoginForm] = useState<FormState>(initialState);
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Perform validation
-    if (!email || !password) {
-      setError("Please fill in all fields");
-      return;
-    }
-    // Perform login logic
     console.log("Logging in...");
+  };
+
+  const handleFieldChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setLoginForm((prevLoginForm) => ({
+      ...prevLoginForm,
+      [name]: { value, error: "" },
+    }));
   };
 
   return (
@@ -22,29 +44,35 @@ const Login: React.FC = () => {
       <Typography variant="h4" gutterBottom>
         Login
       </Typography>
-      {error && (
-        <Typography variant="body2" color="error" gutterBottom>
-          {error}
-        </Typography>
-      )}
+
       <TextField
         label="Email"
         type="email"
         variant="outlined"
         fullWidth
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
+        value={loginForm.email.value}
+        onChange={handleFieldChange}
         required
       />
+      {loginForm.email.error && (
+        <Typography variant="body2" color="error" gutterBottom>
+          {loginForm.email.error}
+        </Typography>
+      )}
       <TextField
         label="Password"
         type="password"
         variant="outlined"
         fullWidth
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
+        value={loginForm.password.value}
+        onChange={handleFieldChange}
         required
       />
+      {loginForm.password.error && (
+        <Typography variant="body2" color="error" gutterBottom>
+          {loginForm.password.error}
+        </Typography>
+      )}
       <Box mt={2}>
         <Button type="submit" variant="contained" color="primary">
           Login
