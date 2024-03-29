@@ -1,8 +1,5 @@
 import React, { useRef, useState } from "react";
 import Compressor from "compressorjs";
-import { createFFmpeg, fetchFile } from "@ffmpeg/ffmpeg";
-
-const ffmpeg = createFFmpeg({ log: true });
 
 const VoiceChat: React.FC = () => {
   const [audioBlob, setAudioBlob] = useState<any | null>(null);
@@ -10,7 +7,6 @@ const VoiceChat: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const mediaRecorderRef = useRef<MediaRecorder | null>(null);
   const chunksRef = useRef<BlobPart[]>([]);
-  const [convertedBlob, setConvertedBlob] = useState<Blob | null>(null);
 
   const handleStartRecording = () => {
     navigator.mediaDevices.getUserMedia({ audio: true }).then((stream) => {
@@ -50,34 +46,24 @@ const VoiceChat: React.FC = () => {
     }
   };
 
-  const handleConvertAndUpload = async () => {
+  const handleConvertAndUpload = () => {
     if (!audioBlob) {
       console.error("No audio to convert and upload");
       return;
     }
 
-    if (!ffmpeg.isLoaded()) {
-      await ffmpeg.load();
-    }
-
-    ffmpeg.FS("writeFile", "audio.wav", await fetchFile(audioBlob));
-
-    await ffmpeg.run(
-      "-i",
-      "audio.wav",
-      "-codec:a",
-      "libmp3lame",
-      "-q:a",
-      "2",
-      "audio.mp3"
-    );
-
-    const data = ffmpeg.FS("readFile", "audio.mp3");
-    const convertedBlob = new Blob([data.buffer], { type: "audio/mp3" });
-    setConvertedBlob(convertedBlob);
-
-    // Upload the convertedBlob to the server
-    // Code for this part will be in the backend (Node.js)
+    new Compressor(audioBlob, {
+      quality: 0.6, // Adjust quality as needed
+      success: (compressedBlob) => {
+        // Handle the compressed blob here
+        console.log("Compressed blob:", compressedBlob);
+        // Upload the compressed blob to the server
+        // Code for this part will be in the backend (Node.js)
+      },
+      error: (error) => {
+        console.error("Compression error:", error);
+      },
+    });
   };
 
   const handlePlayAudio = () => {
