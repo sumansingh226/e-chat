@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import VoiceChat from "../../global/components/VoiceChat";
 import strings from "../../global/constants/Strings";
 import urls from "../../global/constants/UrlConstants";
 
@@ -7,7 +8,7 @@ const Home = () => {
   const location = useLocation();
 
   const Login = () => {
-    return <div>Login Component</div>;
+    return <div>Login Component11</div>;
   };
 
   const Register = () => {
@@ -29,7 +30,7 @@ const Home = () => {
 
     switch (currentPath) {
       case strings.LOGIN: {
-        return <Login />;
+        return <VoiceChat />;
       }
       case strings.REGISTER: {
         return <Register />;
@@ -41,7 +42,7 @@ const Home = () => {
         return <ResetPassword />;
       }
       default: {
-        return <Login />;
+        return <VoiceChat />;
       }
     }
   };
