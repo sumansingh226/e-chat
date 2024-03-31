@@ -108,19 +108,19 @@ const VoiceChat: React.FC = () => {
         onClick={handleStopRecording}
         disabled={!isRecording && !isPaused}
       >
-        Stop Recording
+        Stop
       </button>
       <button onClick={handlePauseRecording} disabled={!isRecording}>
-        Pause Recording
+        Pause
       </button>
       <button onClick={handleResumeRecording} disabled={!isPaused}>
-        Resume Recording
+        Resume
       </button>
       <button onClick={handleSendData} disabled={!audioBlob}>
-        Send Data to Backend
+        Send
       </button>
       <button onClick={handlePlayAudio} disabled={!audioBlob}>
-        Play Audio
+        Play
       </button>
       <button onClick={handleLogBuffer}>Log Buffer</button>
       <audio ref={audioRef} controls />
