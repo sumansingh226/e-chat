@@ -73,19 +73,6 @@ const VoiceChat: React.FC = () => {
     formData.forEach((value, key) => {
       console.log(key, value);
     });
-    // Simulate sending data to the backend
-    // Replace this with your actual API call
-    fetch("your-api-url", {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Data sent to the backend:", data);
-      })
-      .catch((error) => {
-        console.error("Error sending data:", error);
-      });
   };
 
   const handlePlayAudio = () => {
