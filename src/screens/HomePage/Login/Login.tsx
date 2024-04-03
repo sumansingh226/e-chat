@@ -54,6 +54,7 @@ const Login: React.FC = () => {
         onChange={handleFieldChange}
         required
       />
+
       {loginForm.email.error && (
         <Typography variant="body2" color="error" gutterBottom>
           {loginForm.email.error}
