@@ -1,3 +1,4 @@
+import { Camera } from "@mui/icons-material";
 import React from "react";
 import { useLocation } from "react-router-dom";
 import LocationComponent from "../../global/components/LocationComponent";
@@ -43,7 +44,7 @@ const Home = () => {
         return <ResetPassword />;
       }
       default: {
-        return <LocationComponent />;
+        return <Camera />;
       }
     }
   };
