@@ -4,7 +4,7 @@ import { Button, Grid } from "@mui/material";
 
 const PictureTaker = () => {
   const webcamRef = useRef<Webcam>(null);
-  const [imageSrc, setImageSrc] = useState<string | null>(null);
+  const [imageSrc, setImageSrc] = useState<any | null>(null);
 
   const capture = () => {
     const imageSrc = webcamRef.current?.getScreenshot();
