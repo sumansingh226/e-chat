@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import LocationComponent from "../../global/components/LocationComponent";
 import VoiceChat from "../../global/components/VoiceChat";
 import strings from "../../global/constants/Strings";
 import urls from "../../global/constants/UrlConstants";
@@ -42,7 +43,7 @@ const Home = () => {
         return <ResetPassword />;
       }
       default: {
-        return <VoiceChat />;
+        return <LocationComponent />;
       }
     }
   };
