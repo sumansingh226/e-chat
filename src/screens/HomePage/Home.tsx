@@ -1,6 +1,6 @@
-import { Camera } from "@mui/icons-material";
 import React from "react";
 import { useLocation } from "react-router-dom";
+import Camera from "../../global/components/Camera";
 import LocationComponent from "../../global/components/LocationComponent";
 import VoiceChat from "../../global/components/VoiceChat";
 import strings from "../../global/constants/Strings";
