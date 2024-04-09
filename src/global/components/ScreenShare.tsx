@@ -5,8 +5,8 @@ import io from "socket.io-client";
 interface ScreenShareProps {}
 
 const ScreenShare: React.FC<ScreenShareProps> = () => {
-  const [stream, setStream] = useState<MediaStream | null>(null);
-  const [socket, setSocket] = useState<null | any>(null);
+  const [stream, setStream] = useState<MediaStream | null | any>(null);
+  const [socket, setSocket] = useState<any | null>(null);
   const [peer, setPeer] = useState<Peer.Instance | null>(null);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const ScreenShare: React.FC<ScreenShareProps> = () => {
 
     return () => {
       if (stream) {
-        stream.getTracks().forEach((track) => track.stop());
+        stream.getTracks().forEach((track: any) => track.stop());
       }
       if (socket) {
         socket.disconnect();
@@ -69,10 +69,10 @@ const ScreenShare: React.FC<ScreenShareProps> = () => {
     <div>
       {stream && (
         <video
-          autoPlay
-          controls
+          autoPlay={true}
+          controls={true}
           style={{ width: "100%", height: "auto", maxWidth: "100%" }}
-          srcObject={stream}
+          src={stream}
         ></video>
       )}
     </div>
