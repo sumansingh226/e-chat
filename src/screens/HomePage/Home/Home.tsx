@@ -1,8 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import strings from "../../global/constants/Strings";
-import urls from "../../global/constants/UrlConstants";
-import Login from "./Login/Login";
+import strings from "../../../global/constants/Strings";
+import urls from "../../../global/constants/UrlConstants";
+import Login from "../Login/Login";
 
 const Home = () => {
   const location = useLocation();

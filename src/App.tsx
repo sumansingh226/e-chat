@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@mui/material";
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Home from "./screens/HomePage/Home";
+import Home from "./screens/HomePage/Home/Home";
 import { createTheme } from "@mui/material/styles";
 import urls from "./global/constants/UrlConstants";
 import PrivateRoute from "./global/Routes/Private/PrivateRouteAuth";
