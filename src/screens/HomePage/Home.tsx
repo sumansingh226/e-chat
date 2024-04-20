@@ -1,10 +1,8 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import Camera from "../../global/components/Camera";
-import LocationComponent from "../../global/components/LocationComponent";
-import VoiceChat from "../../global/components/VoiceChat";
 import strings from "../../global/constants/Strings";
 import urls from "../../global/constants/UrlConstants";
+import Login from "./Login/Login";
 
 const Home = () => {
   const location = useLocation();
@@ -15,7 +13,7 @@ const Home = () => {
 
     switch (currentPath) {
       case strings.LOGIN: {
-        return <VoiceChat />;
+        return <Login />;
       }
       case strings.REGISTER: {
         return <Register />;
@@ -27,17 +25,10 @@ const Home = () => {
         return <ResetPassword />;
       }
       default: {
-        return <Camera />;
+        return <Login />;
       }
     }
   };
-
-  //   const isAuthenticated = true; // Assuming it's false for this example
-
-  //   if (!isAuthenticated) {
-  //     // history.push(urls.landingViewPath);
-  //     return null;
-  //   }
 
   return getComponentBasedOnURL();
 };
