@@ -1,7 +1,7 @@
 //privateRoute.tsx
 
 import { Outlet, Navigate } from "react-router-dom";
-import { useAuth } from "../userContext";
+import { useAuth } from "./AuthProvider";
 
 const PrivateRoute = () => {
   const { isAuthenticated } = useAuth();
