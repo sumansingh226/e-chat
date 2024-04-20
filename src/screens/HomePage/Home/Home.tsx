@@ -11,16 +11,14 @@ const Home = () => {
   const location = useLocation();
 
   const getComponentBasedOnURL = () => {
-    console.log("location", location);
-
     switch ("") {
       case urls.loginViewPath:
         return <Login />;
-      case strings.REGISTER:
+      case urls.registerViewPath:
         return <Registrartion />;
-      case strings.FORGOTPASSWORD:
+      case urls.forgotPasswordViewPath:
         return <ForgotPassword />;
-      case strings.CHANGE_PASSWORD:
+      case urls.changePasswordViewPath:
         return <ResetPassword />;
       default:
         return <Login />;

@@ -14,12 +14,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   const loginUser = () => {
-    // Perform authentication logic
     setIsAuthenticated(true);
   };
 
   const logoutUser = () => {
-    // Perform logout logic
     setIsAuthenticated(false);
   };
 
