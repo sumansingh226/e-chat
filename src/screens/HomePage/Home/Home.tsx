@@ -1,35 +1,29 @@
-import React from "react";
 import { useLocation } from "react-router-dom";
 import strings from "../../../global/constants/Strings";
-import urls from "../../../global/constants/UrlConstants";
-import ForgotPassword from "../../ForgotPassword/ForgotPassword";
-import Login from "../Login/Login";
 import Registrartion from "../Register/Registrartion";
 import ResetPassword from "../ResetPassword/ResetPassword";
+import Login from "../Login/Login";
+import ForgotPassword from "../../ForgotPassword/ForgotPassword";
+import urls from "../../../global/constants/UrlConstants";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const location = useLocation();
 
   const getComponentBasedOnURL = () => {
-    const currentPath = window.location.pathname;
-    console.log("currentPath", currentPath);
+    console.log("location", location);
 
-    switch (currentPath) {
-      case strings.LOGIN: {
+    switch ("") {
+      case urls.loginViewPath:
         return <Login />;
-      }
-      case strings.REGISTER: {
+      case strings.REGISTER:
         return <Registrartion />;
-      }
-      case strings.FORGOTPASSWORD: {
+      case strings.FORGOTPASSWORD:
         return <ForgotPassword />;
-      }
-      case strings.CHANGE_PASSWORD: {
+      case strings.CHANGE_PASSWORD:
         return <ResetPassword />;
-      }
-      default: {
+      default:
         return <Login />;
-      }
     }
   };
 

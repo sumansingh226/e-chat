@@ -6,7 +6,7 @@ class stringsConstnat extends String {
 
 
     LOGIN = "login";
-    REGISTER = "register";
+    REGISTER = "/register";
     FORGOTPASSWORD = "forgot-password";
     CHANGE_PASSWORD = "changepwd";
     applicationJSON = { "Content-Type": "application/json" };

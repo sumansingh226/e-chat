@@ -6,7 +6,7 @@ interface AuthContextProps {
   logoutUser: () => void;
 }
 
-const AuthContext = createContext<AuthContextProps | undefined>(undefined);
+const AuthContext = createContext<AuthContextProps | any>("");
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
