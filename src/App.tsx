@@ -26,19 +26,10 @@ const App = () => {
     <ThemeProvider theme={theme}>
       <Router>
         <Routes>
-          {/* Public routes */}
-          <Route path="/login" element={<Home />} />
-
-          {/* Private route using PrivateRoute component */}
+          <Route path={urls.loginViewPath} element={<Home />} />
           <Route path="/" element={<PrivateRoute />}>
             <Route path="/account" element={<Home />} />
           </Route>
-
-          {/* Uncommented code */}
-          {/* <Route path={urls.landingViewPath} element={<Home />} />
-          <Route path={urls.loginViewPath} element={<Home />} />
-          <Route path={urls.registerViewPath} element={<Home />} />
-          <Route path={urls.forgotPasswordViewPath} element={<Home />} /> */}
         </Routes>
       </Router>
     </ThemeProvider>
