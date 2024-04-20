@@ -2,7 +2,10 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import strings from "../../../global/constants/Strings";
 import urls from "../../../global/constants/UrlConstants";
+import ForgotPassword from "../../ForgotPassword/ForgotPassword";
 import Login from "../Login/Login";
+import Registrartion from "../Register/Registrartion";
+import ResetPassword from "../ResetPassword/ResetPassword";
 
 const Home = () => {
   const location = useLocation();
@@ -16,7 +19,7 @@ const Home = () => {
         return <Login />;
       }
       case strings.REGISTER: {
-        return <Register />;
+        return <Registrartion />;
       }
       case strings.FORGOTPASSWORD: {
         return <ForgotPassword />;
