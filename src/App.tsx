@@ -28,7 +28,7 @@ const App = () => {
         <Routes>
           <Route path={urls.loginViewPath} element={<Home />} />
           <Route path="/" element={<PrivateRoute />}>
-            <Route path="/account" element={<Home />} />
+            <Route path="/echat" element={<Home />} />
           </Route>
         </Routes>
       </Router>
