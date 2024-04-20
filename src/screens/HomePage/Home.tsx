@@ -9,25 +9,8 @@ import urls from "../../global/constants/UrlConstants";
 const Home = () => {
   const location = useLocation();
 
-  const Login = () => {
-    return <div>Login Component11</div>;
-  };
-
-  const Register = () => {
-    return <div>Register Component</div>;
-  };
-
-  const ForgotPassword = () => {
-    return <div>Forgot Password Component</div>;
-  };
-
-  const ResetPassword = () => {
-    return <div>Reset Password Component</div>;
-  };
-
   const getComponentBasedOnURL = () => {
     const currentPath = window.location.pathname;
-
     console.log("currentPath", currentPath);
 
     switch (currentPath) {
