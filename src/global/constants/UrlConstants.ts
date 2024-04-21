@@ -11,12 +11,9 @@ class UrlConstants {
     forgotPasswordViewPath = "/forgot-password";
     changePasswordViewPath = "/change-password";
     signup = "/signup";
-
-    // Additional URLs for echat
     echatBasePath = "/echat";
     chatRoomsPath = this.echatBasePath + "/rooms";
     userProfilePath = this.echatBasePath + "/profile";
-    // Add more URLs as needed
 }
 
 const urls = new UrlConstants();
