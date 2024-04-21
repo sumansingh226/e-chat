@@ -1,5 +1,4 @@
 import strings from "../global/constants/Strings";
-import urls from "../global/constants/UrlConstants";
 
 
 
