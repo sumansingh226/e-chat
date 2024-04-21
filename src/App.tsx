@@ -6,6 +6,7 @@ import { createTheme } from "@mui/material/styles";
 import urls from "./global/constants/UrlConstants";
 import PrivateRoute from "./global/Routes/Private/PrivateRouteAuth";
 import { AuthProvider } from "./global/Routes/Private/AuthProvider";
+import ScreenShare from "./global/components/ScreenShare";
 
 const theme = createTheme({
   typography: {
@@ -24,7 +25,6 @@ const theme = createTheme({
 
 const App = () => {
   const currentPath = window.location.href;
-  console.log("currentPath", currentPath);
 
   return (
     <ThemeProvider theme={theme}>
@@ -33,7 +33,7 @@ const App = () => {
           <Routes>
             <Route path={urls.landingViewPath} element={<Home />} />
             <Route path="/" element={<PrivateRoute />}>
-              <Route path="/echat" element={<Home />} />
+              <Route path="/echat" element={<ScreenShare />} />
             </Route>
           </Routes>
         </AuthProvider>
