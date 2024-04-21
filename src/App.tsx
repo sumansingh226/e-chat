@@ -32,8 +32,8 @@ const App = () => {
         <AuthProvider>
           <Routes>
             <Route path={urls.landingViewPath} element={<Home />} />
-            <Route path="/" element={<PrivateRoute />}>
-              <Route path="/echat" element={<ScreenShare />} />
+            <Route path={urls.landingViewPath} element={<PrivateRoute />}>
+              <Route path={urls.echatBasePath} element={<ScreenShare />} />
             </Route>
           </Routes>
         </AuthProvider>
