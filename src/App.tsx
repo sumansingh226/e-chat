@@ -24,8 +24,6 @@ const theme = createTheme({
 });
 
 const App = () => {
-  const currentPath = window.location.href;
-
   return (
     <ThemeProvider theme={theme}>
       <Router>
